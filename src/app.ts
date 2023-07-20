@@ -1,20 +1,9 @@
 import { Invoice } from "./classes/Invoice.js";
+import { ListTemplate } from './classes/ListTemplate.js';
 import { Payment } from "./classes/Payment.js";
 import { HasFormatter } from "./interfaces/HasFormatter.js";
 
-// let docOne: HasFormatter;
-// let docTwo: HasFormatter;
-
-// docOne = new Invoice('yoshi', 'web work', 250);
-// docTwo = new Payment('mario', 'pluming work', 200);
-
-// let docs: HasFormatter[] = [];
-// docs.push(docOne);
-// docs.push(docTwo);
-
-// console.log(docs);
-
-
+// form instance
 const form: HTMLFormElement = document.querySelector('.new-item-form')!;
 
 // inputs
@@ -23,10 +12,15 @@ const toFrom: HTMLInputElement = document.querySelector('#tofrom')!;
 const details: HTMLInputElement = document.querySelector('#details')!;
 const amount: HTMLInputElement = document.querySelector('#amount')!;
 
+// list template instance
+const ul = document.querySelector('ul')!;
+const list = new ListTemplate(ul);
+
 form.addEventListener('submit', (e: Event) => {
     e.preventDefault();
 
     let doc: HasFormatter;
+    console.log(type);
 
     if (type.value = 'invoice') {
         doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
@@ -34,39 +28,5 @@ form.addEventListener('submit', (e: Event) => {
         doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
     }
 
-    console.log(doc);
-
+    list.render(doc, type.value, 'end');
 });
-
-// classes
-// const invOne = new Invoice('Emil', 'cinema tickets', 25);
-// const invTwo = new Invoice('Gina', 'trip to Paris', 1500);
-
-// let invoices: Invoice[] = [];
-// invoices.push(invOne);
-// invoices.push(invTwo);
-
-// invoices.forEach(inv => {
-//     console.log(inv.client, inv.amount, inv.format());
-
-// });
-
-// interfaces
-interface IsPerson {
-    name: string;
-    age: number;
-    speak(a: string): void;
-    spend(a: number): number;
-}
-
-const me: IsPerson = {
-    name: 'shaun',
-    age: 30,
-    speak(text: string): void {
-        console.log(text);
-    },
-    spend(amount: number): number {
-        console.log('I spent', amount);
-        return amount;
-    }
-};
