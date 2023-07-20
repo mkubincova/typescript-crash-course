@@ -4,8 +4,8 @@
   "description": "",
   "main": "sandbox.js",
   "scripts": {
-    "dev": "tsc sandbox.ts --watch",
-    "build": "tsc sandbox.ts",
+    "dev": "tsc --watch",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

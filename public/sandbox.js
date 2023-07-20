@@ -1,3 +1,4 @@
+"use strict";
 // ***** INFERRED TYPES ***** //
 // variables
 var character = 'mario';
