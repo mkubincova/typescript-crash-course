@@ -32,26 +32,10 @@ form.addEventListener('submit', (e: Event) => {
 });
 
 
-// enums
-enum ResourceType { BOOK, AUTHOR, FILM, DIRECTOR, PERSON }
+// tuples
 
-interface Resource<T> {
-    uid: number,
-    resourceType: ResourceType,
-    data: T;
-}
-
-const docOne: Resource<object> = {
-    uid: 1,
-    resourceType: ResourceType.BOOK,
-    data: { title: 'abc' }
-};
-
-const docTwo: Resource<object> = {
-    uid: 2,
-    resourceType: ResourceType.DIRECTOR,
-    data: { director: 'Spielberg' }
-};
-
-
+let arr = ['ryu', 25, true];
+arr[0] = false;
+arr[1] = 'yoshi';
+arr = [30, false, 'yoshi']
 
