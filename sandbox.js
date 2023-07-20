@@ -17,3 +17,18 @@ var ninja = {
     enrolled: true,
     age: 30
 };
+// ***** EXPLICIT TYPES ***** //
+// variables
+var message;
+var year;
+var isLoggedIn;
+var msg = 25;
+// arrays
+var ninjas = [];
+var years = [];
+var mix = [];
+var mysteries = [];
+// objects
+var person;
+var ninjaOne;
+var stranger;
