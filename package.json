@@ -1,0 +1,18 @@
+{
+  "name": "typescript-crash-course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sandbox.js",
+  "scripts": {
+    "dev": "tsc sandbox.ts --watch",
+    "build": "tsc sandbox.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.1.6",
+    "typescript-compiler": "^1.4.1-2"
+  }
+}
